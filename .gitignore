@@ -1,0 +1,9 @@
+# Python virtual environment
+.venv/
+
+# Bytecode and caches
+__pycache__/
+*.py[cod]
+
+# DS_store
+.DS_store
