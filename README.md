@@ -21,6 +21,19 @@ During this hands-on session, we encourage participants to build web apps for th
 
 6. Wrap up and share (optional): Prepare your web app for sharing through SciLifeLab Serve (using the instructions that your AI assistant generates for you based on our template or by following SciLifeLab Serve user documentation), and add your app with visibility Project/Private to test it.
 
+## Good prompting approach
+
+When you are using AI assistants to create web apps, treat prompts as specifications for how and what your app should do. We suggest to include the following:
+
+- Purpose: What question should the app answer?
+- Data: What does the input mean? What are its units?
+- Audience: Who will use the app?
+- Interactions: Filters, parameters, buttons, uploads, or downloads?
+- Output: A chart/table, or a computed prediction/result?
+- Scientific rules: What must not change or be invented?
+- Constraints: Simple code, familiar framework, public/non-sensitive data.
+- Verification: What checks should the app perform?
+
 ## Questions?
 
 The instructors are happy to help and answer your questions on the spot during the workshop. Feel free to reach other with other questions afterwards: serve@scilifelab.se.
