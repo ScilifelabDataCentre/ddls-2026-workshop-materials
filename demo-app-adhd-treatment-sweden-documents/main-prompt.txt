@@ -1,0 +1,77 @@
+Build a small, polished Streamlit application called
+"ADHD treatment in Sweden: explore the data".
+
+CONTEXT
+This is a public, educational research dashboard for a DDLS workshop.
+Use my provided CSV as the only data source. It originates from the
+Varden i siffror export of the indicator
+"ADHD-behandling bland barn och unga" (data source: Lakemedelsregistret,
+Socialstyrelsen). Source page:
+https://vardenisiffror.se/sv/indikatorer/adhd-behandling-bland-barn-och-unga
+
+INPUT DATA
+File: adhd_treatment_sweden_workshop_2012_2025.csv
+Prefer locating the file at data/adhd_treatment_sweden_workshop_2012_2025.csv.
+The CSV columns are:
+- year: integer year, 2012-2025
+- area: "Riket" or the name of one of 21 Swedish regions
+- area_type: "National" or "Region"
+- treated_per_1000: numeric indicator value
+
+There are 308 rows: 22 areas x 14 years. This is aggregate data,
+NOT individual patient-level data. Do not invent observations, retrieve
+another dataset, or generate synthetic replacement data. If the CSV is
+missing, tell me how to place/upload it instead of silently substituting.
+
+USER INTERFACE
+1. Title, short explanation of what the indicator measures, source link,
+   and the unit "treated children and young people per 1,000 inhabitants".
+2. A sidebar or top panel with:
+   - one or more region selectors (default: "Riket"),
+   - a year-range control (default: 2012-2025),
+   - a year selector for the regional comparison (default: 2025).
+3. A line chart of the selected areas' annual rates, with years in order,
+   clear axis labels, an accessible legend, and informative tooltips.
+4. A bar chart comparing all 21 regions for the selected year, ordered by
+   rate; optionally mark the provided "Riket" national value as reference.
+5. Simple summary metrics for the selected area and time window, including
+   its latest rate and change from the first selected year. Label rate
+   differences in "per 1,000", not as percentages.
+6. A filterable data table and optional download of the filtered rows.
+7. A short limitations section: rates are aggregated; changes do not show
+   causation, prevalence, appropriateness of treatment, or individual risk.
+
+VALIDATION AND SCIENTIFIC CARE
+- Parse year and treated_per_1000 into numeric types; sort by year.
+- Check missing values, repeated area-year pairs, and unexpected columns;
+  show clear messages rather than silently discarding data.
+- Verify that "Riket" in 2012 is 16.32 and in 2025 is 48.80.
+- Verify the full input contains 308 rows, 22 areas, and 14 years.
+- Never calculate "Riket" as the unweighted mean of regional rates;
+  use the source's "Riket" observations.
+- Do not equate a higher/lower rate with better/worse care.
+- Add attribution to the indicator/source and a note to check data
+  reuse terms before publishing publicly.
+
+IMPLEMENTATION
+- Prefer a small, maintainable Python project with Streamlit, pandas,
+  and Plotly or Streamlit-native charts; avoid extra services or a database.
+- Make sure the real CSV is included in Docker image builds; resolve its
+  path reliably inside the container.
+- Follow the SciLifeLab Serve template README, AGENTS.md and Streamlit
+  profile for the Dockerfile, runtime port, dependencies, GitHub Actions,
+  and deployment requirements. Do not substitute generic Docker defaults
+  for template-specific choices.
+- Provide a README with exact local run, test, Docker build/run, and
+  GitHub-to-Serve deployment instructions.
+- No secrets, authentication, uploads of sensitive data, or user tracking.
+
+DEFINITION OF DONE
+- The app runs locally and displays both charts using the provided CSV.
+- Changing region and year filters updates the charts and table correctly.
+- The 2012 and 2025 national values match 16.32 and 48.80.
+- Test the validation logic and report which tests/commands you ran.
+- If Docker is available, build and smoke-test the image. If not, explain
+  what was not tested and the exact commands I should run.
+- Do not push to GitHub or publish to Serve without my approval.
+- Finish with a concise file tree and step-by-step demo commands.
