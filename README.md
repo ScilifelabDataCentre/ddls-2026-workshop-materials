@@ -36,9 +36,9 @@ When you are using AI assistants to create web apps, treat prompts as specificat
 
 ## Results
 
-[Tree Crown Detection Explorer](https://tree-crown-detection-explorer.serve.scilifelab.se/)
+[Tree Crown Detection Explorer](https://tree-crown-detection-explorer.serve.scilifelab.se/), [Code](https://github.com/anondo1969/tree-crown-detection-explorer)
 
-[Semaglutide Use in Sweden: Interactive Explorer](https://semaglutide-explorer.serve.scilifelab.se/)
+[Semaglutide Use in Sweden: Interactive Explorer](https://semaglutide-explorer.serve.scilifelab.se/), [Code](https://github.com/anondo1969/semaglutide-explorer)
 
 ## Questions?
 
