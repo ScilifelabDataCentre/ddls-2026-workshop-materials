@@ -34,6 +34,12 @@ When you are using AI assistants to create web apps, treat prompts as specificat
 - Constraints: Simple code, familiar framework, public/non-sensitive data.
 - Verification: What checks should the app perform?
 
+## Results
+
+[Tree Crown Detection Explorer](https://tree-crown-detection-explorer.serve.scilifelab.se/)
+
+[Semaglutide Use in Sweden: Interactive Explorer](https://semaglutide-explorer.serve.scilifelab.se/)
+
 ## Questions?
 
 The instructors are happy to help and answer your questions on the spot during the workshop. Feel free to reach other with other questions afterwards: serve@scilifelab.se.
